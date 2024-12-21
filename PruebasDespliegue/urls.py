@@ -22,6 +22,6 @@ from . import views
 urlpatterns = [
     #    path('admin/', admin.site.urls),
     path('', lambda request: HttpResponse('Hello, World!')),
-    path('home/', lambda request: HttpResponse('Hello, World!'), name='home'),
+    path('home/', lambda request: HttpResponse('Hello, World'), name='home'),
 
 ]
