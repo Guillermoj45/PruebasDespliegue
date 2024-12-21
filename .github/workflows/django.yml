@@ -70,8 +70,8 @@ jobs:
         LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.1/x64/lib
     - name: Build and Push Docker Image
       run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/pruebasdespliegue:${{ env.COMMIT_HASH }} .
-        docker push ${{ secrets.DOCKER_USERNAME }}/pruebasdespliegue:${{ env.COMMIT_HASH }}
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/pruebasdespliegue:${{ github.sha }} .
+        docker push ${{ secrets.DOCKER_USERNAME }}/pruebasdespliegue:${{ github.sha }}
     - name: Deploy
       run: |
         echo "Deploying to production"
