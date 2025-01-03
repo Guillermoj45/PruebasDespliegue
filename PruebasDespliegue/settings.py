@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3') if IS_TESTING else os.getenv('PGDATABASE', 'mydatabase'),
         'USER': '' if IS_TESTING else os.getenv('POSTGRES_USER', 'postgres'),
         'PASSWORD': '' if IS_TESTING else os.getenv('POSTGRES_PASSWORD', 'postgres'),
-        'HOST': '' if IS_TESTING else os.getenv('DATABASE_URL', 'db'),
+        'HOST': '' if IS_TESTING else os.getenv('PGHOST', 'db'),
         'PORT': '' if IS_TESTING else os.getenv('PGPORT', '5432'),
     }
 }
