@@ -82,11 +82,11 @@ IS_TESTING = 'test' in sys.argv
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3' if IS_TESTING else 'django.db.backends.postgresql',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3') if IS_TESTING else os.getenv('DATABASE_NAME', 'mydatabase'),
-        'USER': '' if IS_TESTING else os.getenv('DATABASE_USER', 'postgres'),
-        'PASSWORD': '' if IS_TESTING else os.getenv('DATABASE_PASSWORD', 'postgres'),
-        'HOST': '' if IS_TESTING else os.getenv('DATABASE_HOST', 'db'),
-        'PORT': '' if IS_TESTING else os.getenv('DATABASE_PORT', '5432'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3') if IS_TESTING else os.getenv('PGDATABASE', 'mydatabase'),
+        'USER': '' if IS_TESTING else os.getenv('POSTGRES_USER', 'postgres'),
+        'PASSWORD': '' if IS_TESTING else os.getenv('POSTGRES_PASSWORD', 'postgres'),
+        'HOST': '' if IS_TESTING else os.getenv('DATABASE_URL', 'db'),
+        'PORT': '' if IS_TESTING else os.getenv('PGPORT', '5432'),
     }
 }
 
