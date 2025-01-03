@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 8000
 
 # Comando para ejecutar la aplicación
-CMD ["/bin/sh", "-c", "python manage.py migrate && uvicorn myproject.asgi:application --host 0.0.0.0 --port 8000"]
+CMD ["/bin/sh", "-c", "python manage.py migrate && uvicorn PruebasDespliegue.asgi.application --host 0.0.0.0 --port 8000"]
