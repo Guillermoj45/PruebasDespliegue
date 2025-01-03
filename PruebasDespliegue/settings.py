@@ -87,8 +87,6 @@ DATABASES = {
         'PASSWORD': '' if IS_TESTING else os.getenv('POSTGRES_PASSWORD', 'postgres'),
         'HOST': '' if IS_TESTING else os.getenv('PGHOST', 'db'),
         'PORT': '' if IS_TESTING else os.getenv('PGPORT', '5432'),
-        'CONN_MAX_AGE': 1,  # Cerrar conexiones inmediatamente después de cada solicitud
-
     }
 }
 
