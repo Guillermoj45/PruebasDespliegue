@@ -14,7 +14,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Crea un volumen
-VOLUME ["/hola"]
+RAILWAY_VOLUME_NAME : hola
+RAILWAY_VOLUME_MOUNT_PATH : /hola
 
 # Expone el puerto en el que correrá la aplicación
 EXPOSE 8000
