@@ -13,6 +13,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copia el resto del código de la aplicación al contenedor
 COPY . .
 
+# Crea un volumen
+VOLUME ["/hola"]
+
 # Expone el puerto en el que correrá la aplicación
 EXPOSE 8000
 
