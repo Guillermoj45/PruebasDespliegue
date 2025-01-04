@@ -28,6 +28,14 @@ SECRET_KEY = 'django-insecure-i&(echk1od#dndm_w&cb^z1)cb^t$+h$c)_69!_g7)7$ag46b-
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = [
+    'https://pruebasdespliegue-production.up.railway.app/',
+]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
 
 
 # Application definition
@@ -39,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pruebasPruebas.apps.PruebaspruebasConfig'
+    'pruebasPruebas.apps.PruebaspruebasConfig',
 ]
 
 MIDDLEWARE = [
