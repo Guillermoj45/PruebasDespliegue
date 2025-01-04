@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 import sys
 
+from django.conf.global_settings import STATICFILES_DIRS
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -90,10 +92,10 @@ IS_TESTING = 'test' in sys.argv
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3' if IS_TESTING else 'django.db.backends.postgresql',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3') if IS_TESTING else os.getenv('PGDATABASE', 'mydatabase'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3') if IS_TESTING else os.getenv('PGDATABASE', 'postgres'),
         'USER': '' if IS_TESTING else os.getenv('POSTGRES_USER', 'postgres'),
         'PASSWORD': '' if IS_TESTING else os.getenv('POSTGRES_PASSWORD', 'postgres'),
-        'HOST': '' if IS_TESTING else os.getenv('PGHOST', 'db'),
+        'HOST': '' if IS_TESTING else os.getenv('PGHOST', 'localhost'),
         'PORT': '' if IS_TESTING else os.getenv('PGPORT', '5432'),
     }
 }
@@ -134,6 +136,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS=[BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticRoot'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
